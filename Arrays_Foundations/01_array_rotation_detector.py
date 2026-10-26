@@ -7,14 +7,11 @@ def array_rotation_detector(arr1: list, arr2: list) -> bool:
         return True
 
     rotated = arr2[:]
-
     for _ in range(len(arr1)):
-
-        element = arr2.pop(len(arr2) - 1)
-        arr2.insert(0, element)
-
-        if arr1 == arr2:
+        if rotated == arr1:
             return True
+        element = rotated.pop()
+        rotated.insert(0, element)
     return False
 
 
